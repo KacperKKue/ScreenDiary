@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScreenDiary.Views.SettingsPage"
+             xmlns:viewmodels="clr-namespace:ScreenDiary.ViewModels"
+             Title="SettingsPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:SettingsViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="16" Spacing="20">
+
+        <Label Text="Ustawienia aplikacji"
+               FontSize="20"
+               FontAttributes="Bold"/>
+
+        <Button Text="Usuń wszystkie dane"
+                BackgroundColor="Red"
+                TextColor="White"
+                Clicked="Reset_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

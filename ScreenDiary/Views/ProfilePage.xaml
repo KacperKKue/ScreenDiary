@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScreenDiary.Views.ProfilePage"
+             xmlns:viewmodels="clr-namespace:ScreenDiary.ViewModels"
+             Title="ProfilePage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:Profile.ProfileViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        
+        <VerticalStackLayout 
+            Padding="16" 
+            Spacing="14">
+
+            <Image 
+                Source="{Binding AvatarPath}"
+                HeightRequest="120"
+                WidthRequest="120"
+                Aspect="AspectFill"
+                HorizontalOptions="Center"/>
+
+            <Button 
+                Text="Zmień avatar"
+                Clicked="ChangeAvatar_Clicked"/>
+
+            <Entry 
+                Text="{Binding Nickname}"
+                Placeholder="Twój pseudonim"
+                HorizontalTextAlignment="Center"/>
+
+            <Frame 
+                Padding="12" 
+                CornerRadius="12">
+
+                <VerticalStackLayout 
+                    Spacing="6">
+
+                    <Label 
+                        Text="📊 Statystyki" 
+                        FontAttributes="Bold"/>
+
+                    <Label 
+                        Text="{Binding MoviesCount, StringFormat='Filmy: {0}'}"/>
+
+                    <Label 
+                        Text="{Binding FinishedCount, StringFormat='Obejrzane: {0}'}"/>
+
+                    <Label 
+                        Text="{Binding FavoritesCount, StringFormat='Ulubione: {0}'}"/>
+
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

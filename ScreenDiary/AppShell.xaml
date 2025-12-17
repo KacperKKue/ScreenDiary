@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ScreenDiary.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ScreenDiary"
+    xmlns:views="clr-namespace:ScreenDiary.Views"
+    Title="ScreenDiary">
+
+    <TabBar>
+
+        <ShellContent 
+            Title="Filmy"
+            Icon=""
+            ContentTemplate="{DataTemplate views:MoviesPage}">
+        </ShellContent>
+
+        <ShellContent 
+            Title="Seriale"
+            Icon=""
+            ContentTemplate="{DataTemplate views:SeriesPage}" >
+        </ShellContent>
+
+        <ShellContent 
+            Title="Profil"
+            Icon=""
+            ContentTemplate="{DataTemplate views:ProfilePage}">
+        </ShellContent>
+
+        <ShellContent 
+            Title="Ustawienia"
+            Icon=""
+            ContentTemplate="{DataTemplate views:SettingsPage}">
+        </ShellContent>
+
+    </TabBar>
+
+</Shell>

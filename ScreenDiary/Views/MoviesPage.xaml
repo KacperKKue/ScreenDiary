@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScreenDiary.Views.MoviesPage"
+             xmlns:viewmodels="clr-namespace:ScreenDiary.ViewModels"
+             Title="MoviesPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:MoviesViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="16" Spacing="12">
+
+        <CollectionView 
+            ItemsSource="{Binding Movies}" 
+            SelectionMode="Single"
+            SelectionChanged="Movie_Selected">
+            
+            <CollectionView.ItemTemplate>
+                
+                <DataTemplate>
+                    
+                    <Frame 
+                        Padding="8" 
+                        Margin="4" 
+                        CornerRadius="10" 
+                        HasShadow="True">
+                        
+                        <HorizontalStackLayout 
+                            Spacing="12">
+
+                            <Image 
+                                Source="{Binding ImageUrl}" 
+                                WidthRequest="50" 
+                                HeightRequest="75" />
+
+                            <VerticalStackLayout>
+                                <Label 
+                                    Text="{Binding Title}" 
+                                    FontSize="18" 
+                                    FontAttributes="Bold"/>
+
+                                <Label 
+                                    Text="Rating: {Binding Rating}" 
+                                    FontSize="14"/>
+
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button 
+            Text="Dodaj film" 
+            Clicked="AddMovie_Clicked" />
+
+    </VerticalStackLayout>
+    
+</ContentPage>

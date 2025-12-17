@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScreenDiary.Views.Movies.MovieDetailsPage"
+             Title="MovieDetailsPage">
+
+    <ScrollView>
+        
+        <VerticalStackLayout 
+            Padding="16" 
+            Spacing="12">
+
+            <Label 
+                Text="{Binding Movie.Title}"
+                FontSize="22"
+                FontAttributes="Bold"/>
+
+            <Picker 
+                Title="Status oglądania"
+                ItemsSource="{Binding Statuses}"
+                SelectedItem="{Binding Movie.Status}" />
+
+            <Label 
+                Text="Ocena (0–10)" />
+            
+            <Slider 
+                Minimum="0"
+                Maximum="10"
+                Value="{Binding Movie.Rating}" />
+
+            <CheckBox 
+                IsChecked="{Binding Movie.IsFavorite}" />
+            
+            <Label 
+                Text="Ulubiony" />
+
+            <Editor 
+                Placeholder="Notatki"
+                AutoSize="TextChanges"
+                Text="{Binding Movie.Notes}" />
+
+            <Button Text="Zapisz"
+                    Clicked="Save_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
