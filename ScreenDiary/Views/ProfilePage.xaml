@@ -46,6 +46,9 @@
                         Text="{Binding MoviesCount, StringFormat='Filmy: {0}'}"/>
 
                     <Label 
+                        Text="{Binding SeriesCount, StringFormat='Seriale: {0}'}"/>
+
+                    <Label 
                         Text="{Binding FinishedCount, StringFormat='Obejrzane: {0}'}"/>
 
                     <Label 

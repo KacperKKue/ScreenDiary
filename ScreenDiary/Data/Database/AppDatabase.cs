@@ -36,6 +36,9 @@ namespace ScreenDiary.Data.Database
         public Task<int> GetMoviesCountAsync()
             => _database.Table<MovieEntity>().CountAsync();
 
+        public Task<int> GetSeriesCountAsync()
+            => _database.Table<SeriesEntity>().CountAsync();
+
         public Task<int> GetFinishedMoviesCountAsync()
             => _database.Table<MovieEntity>()
                 .Where(m => m.Status == WatchStatus.Finished)

@@ -9,52 +9,60 @@
         <viewmodels:MoviesViewModel />
     </ContentPage.BindingContext>
 
-    <VerticalStackLayout Padding="16" Spacing="12">
+    <Grid 
+        RowDefinitions="*,Auto"
+        Padding="12">
 
-        <CollectionView 
-            ItemsSource="{Binding Movies}" 
-            SelectionMode="Single"
-            SelectionChanged="Movie_Selected">
-            
-            <CollectionView.ItemTemplate>
-                
-                <DataTemplate>
-                    
-                    <Frame 
-                        Padding="8" 
-                        Margin="4" 
-                        CornerRadius="10" 
-                        HasShadow="True">
-                        
-                        <HorizontalStackLayout 
-                            Spacing="12">
+        <VerticalStackLayout 
+            Grid.Row="0"
+            Padding="16" 
+            Spacing="12">
 
-                            <Image 
-                                Source="{Binding ImageUrl}" 
-                                WidthRequest="50" 
-                                HeightRequest="75" />
+            <CollectionView 
+                ItemsSource="{Binding Movies}" 
+                SelectionMode="Single"
+                SelectionChanged="Movie_Selected">
 
-                            <VerticalStackLayout>
-                                <Label 
-                                    Text="{Binding Title}" 
-                                    FontSize="18" 
-                                    FontAttributes="Bold"/>
+                <CollectionView.ItemTemplate>
 
-                                <Label 
-                                    Text="Rating: {Binding Rating}" 
-                                    FontSize="14"/>
+                    <DataTemplate>
 
-                            </VerticalStackLayout>
-                        </HorizontalStackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                        <Frame 
+                            Padding="8" 
+                            Margin="4" 
+                            CornerRadius="10" 
+                            HasShadow="True">
+
+                            <HorizontalStackLayout 
+                                Spacing="12">
+
+                                <Image 
+                                    Source="{Binding ImageUrl}" 
+                                    WidthRequest="50" 
+                                    HeightRequest="75" />
+
+                                <VerticalStackLayout>
+                                    <Label 
+                                        Text="{Binding Title}" 
+                                        FontSize="18" 
+                                        FontAttributes="Bold"/>
+
+                                    <Label 
+                                        Text="Rating: {Binding Rating}" 
+                                        FontSize="14"/>
+
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
 
         <Button 
+            Grid.Row="1"
             Text="Dodaj film" 
             Clicked="AddMovie_Clicked" />
 
-    </VerticalStackLayout>
-    
+    </Grid>
 </ContentPage>

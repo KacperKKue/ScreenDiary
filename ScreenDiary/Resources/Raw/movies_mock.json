@@ -1,0 +1,183 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/iEFuHjqrE059SmflBva1JzDJutE.jpg",
+      "genre_ids": [
+        16,
+        14,
+        28,
+        10749,
+        10751
+      ],
+      "id": 496450,
+      "original_language": "fr",
+      "original_title": "Miraculous - le film",
+      "overview": "After a guardian of magical jewels turns an awkward girl and a popular boy into superheroes, they can never reveal their identities — even to each other.",
+      "popularity": 7.4381,
+      "poster_path": "/dQNJ8SdCMn3zWwHzzQD2xrphR1X.jpg",
+      "release_date": "2023-07-05",
+      "title": "Miraculous: Ladybug & Cat Noir, The Movie",
+      "video": false,
+      "vote_average": 7.6,
+      "vote_count": 931
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9BOQ99P9uZcWOpFlQ0mq2Hz1lam.jpg",
+      "genre_ids": [
+        16,
+        28,
+        14,
+        10751
+      ],
+      "id": 1106477,
+      "original_language": "fr",
+      "original_title": "Miraculous : Les aventures de Ladybug et Chat Noir",
+      "overview": "At school, a new student named Kagami catches Adrien’s attention, which Marinette is quick to notice. However, Marinette herself meets Luka, who may well sow confusion in her heart… She also meets the Guardian of the Miraculous, Master Fu, and learns about the existence of other Miraculous. Thanks to them, she will be able to occasionally enlist the help of other superheroes of her choice for particularly difficult missions. Finally, she finds out that Hawk Moth has a dreadful plan that he has been working on for a very long time and that he is determined to implement to defeat Cat Noir and her!",
+      "popularity": 0.9233,
+      "poster_path": "/miih6wAp8eFCaGGoeFH9nGv8rox.jpg",
+      "release_date": "2017-02-22",
+      "title": "Miraculous: Tales of Ladybug & Cat Noir",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lizKGCneSI5gG0XZn35Nu3jhhRb.jpg",
+      "genre_ids": [
+        16
+      ],
+      "id": 1529731,
+      "original_language": "fr",
+      "original_title": "Miraculous : Les aventures de Ladybug et Chat Noir",
+      "overview": "Paris faces new dangers when Lila Rossi becomes Chrysalis, a more powerful and cunning villain.",
+      "popularity": 0.5282,
+      "poster_path": "/odXGnbvJXnzK3LckgvqQOjDLvRr.jpg",
+      "release_date": "2025-08-14",
+      "title": "Miraculous: Tales of Ladybug & Cat Noir",
+      "video": false,
+      "vote_average": 10.0,
+      "vote_count": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/dkjiNiojN6BQpYJnrkTeaEYqhkI.jpg",
+      "genre_ids": [
+        16
+      ],
+      "id": 1164940,
+      "original_language": "fr",
+      "original_title": "Miraculous - le film 2",
+      "overview": "",
+      "popularity": 0.8107,
+      "poster_path": "/xVpanRQgtAAz16MNmz12o8pDu08.jpg",
+      "release_date": "",
+      "title": "Miraculous: Ladybug & Cat Noir, The Movie 2",
+      "video": false,
+      "vote_average": 0.0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zc1Uf3hy6MVSuIKyfK7OacwEU28.jpg",
+      "genre_ids": [
+        16
+      ],
+      "id": 1258031,
+      "original_language": "en",
+      "original_title": "Miraculous le film 3",
+      "overview": "",
+      "popularity": 1.1147,
+      "poster_path": "/qvVgzlet0mIwAGoBoqOhRMzGhIr.jpg",
+      "release_date": "",
+      "title": "Miraculous: Ladybug & Cat Noir, The Movie 3",
+      "video": false,
+      "vote_average": 0.0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cBTwQKMd7Vn6rGTGBtoFLIfj7uM.jpg",
+      "genre_ids": [
+        16,
+        12,
+        28,
+        14
+      ],
+      "id": 1147416,
+      "original_language": "fr",
+      "original_title": "Miraculous World : Londres, la course contre le temps",
+      "overview": "To save the future from a terrible fate, Marinette becomes Chronobug and teams up with Bunnyx to defeat a mysterious opponent who travels through time.",
+      "popularity": 5.6954,
+      "poster_path": "/6AtoMpHvs9pxd30KsyK8QmJ9W9M.jpg",
+      "release_date": "2024-11-14",
+      "title": "Miraculous World: London, At the Edge of Time",
+      "video": false,
+      "vote_average": 7.433,
+      "vote_count": 290
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2BZ7PC9aISswNXV2tugmjGiriaB.jpg",
+      "genre_ids": [
+        16,
+        10770,
+        14,
+        28
+      ],
+      "id": 755812,
+      "original_language": "fr",
+      "original_title": "Miraculous World : New York, les héros unis",
+      "overview": "Marinette’s class is headed to New York, the city of superheroes, for French-American Friendship Week.",
+      "popularity": 2.4833,
+      "poster_path": "/9YbyvcrHmY2SVbdfXpb8mC4Fy0g.jpg",
+      "release_date": "2020-09-25",
+      "title": "Miraculous World: New York, United HeroeZ",
+      "video": false,
+      "vote_average": 8.091,
+      "vote_count": 1119
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/rlNnwObbMu5G2FaOUlacnUIdIIA.jpg",
+      "genre_ids": [
+        16,
+        14,
+        28,
+        10770
+      ],
+      "id": 726684,
+      "original_language": "fr",
+      "original_title": "Miraculous World : Shanghai, la légende de Ladydragon",
+      "overview": "On school break, Marinette heads to Shanghai to meet Adrien. But after arriving, Marinette loses all her stuff, including the Miraculous that allows her to turn into Ladybug!",
+      "popularity": 2.3662,
+      "poster_path": "/msI5a9TPnepx47JUb2vl88hb80R.jpg",
+      "release_date": "2021-05-15",
+      "title": "Miraculous World: Shanghai - The Legend of Ladydragon",
+      "video": false,
+      "vote_average": 7.9,
+      "vote_count": 673
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [],
+      "id": 1022500,
+      "original_language": "en",
+      "original_title": "PJ Masks: Hello Christmas",
+      "overview": "Hello Christmas! and other adventures",
+      "popularity": 0.0347,
+      "poster_path": "/9uZZNvop6Wvw53qLtNSmPo2YiNu.jpg",
+      "release_date": "2017-02-01",
+      "title": "PJ Masks: Hello Christmas",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 4
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 9
+}

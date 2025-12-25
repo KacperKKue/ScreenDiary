@@ -34,6 +34,7 @@ namespace ScreenDiary.ViewModels.Profile
         }
 
         public int MoviesCount { get; private set; }
+        public int SeriesCount { get; private set; }
         public int FinishedCount { get; private set; }
         public int FavoritesCount { get; private set; }
         public double AverageRating { get; private set; }
@@ -49,10 +50,12 @@ namespace ScreenDiary.ViewModels.Profile
         public async void LoadStatistics()
         {
             MoviesCount = await DatabaseService.Database.GetMoviesCountAsync();
+            SeriesCount = await DatabaseService.Database.GetSeriesCountAsync();
             FinishedCount = await DatabaseService.Database.GetFinishedMoviesCountAsync();
             FavoritesCount = await DatabaseService.Database.GetFavoriteMoviesCountAsync();
 
             OnPropertyChanged(nameof(MoviesCount));
+            OnPropertyChanged(nameof(SeriesCount));
             OnPropertyChanged(nameof(FinishedCount));
             OnPropertyChanged(nameof(FavoritesCount));
         }

@@ -11,23 +11,18 @@ public partial class MoviesPage : ContentPage
 		InitializeComponent();
 	}
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        (BindingContext as ViewModels.MoviesViewModel)?.LoadMovies();
+    }
+
+
     private async void AddMovie_Clicked(object sender, EventArgs e)
     {
-        // Prosty popup – w prawdziwej aplikacji bêdzie osobna strona / modal
-        string title = await DisplayPromptAsync("Nowy film", "Podaj tytu³ filmu:");
-        if (string.IsNullOrWhiteSpace(title))
-            return;
-
-        var movie = new MovieEntity
-        {
-            Title = title,
-            Rating = 0,
-            IsFavorite = false
-        };
-
-        await DatabaseService.Database.SaveMovieAsync(movie);
-
-        (BindingContext as MoviesViewModel)?.LoadMovies();
+        await Navigation.PushAsync(
+            new Views.Movies.AddMoviePage()
+        );
     }
 
     private async void Movie_Selected(object sender, SelectionChangedEventArgs e)

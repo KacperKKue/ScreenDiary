@@ -11,25 +11,25 @@
 
         <ShellContent 
             Title="Filmy"
-            Icon=""
+            Icon="../Icons/videocam.svg"
             ContentTemplate="{DataTemplate views:MoviesPage}">
         </ShellContent>
 
         <ShellContent 
             Title="Seriale"
-            Icon=""
+            Icon="../Icons/tv_next.png"
             ContentTemplate="{DataTemplate views:SeriesPage}" >
         </ShellContent>
 
         <ShellContent 
             Title="Profil"
-            Icon=""
+            Icon="../Icons/person.svg"
             ContentTemplate="{DataTemplate views:ProfilePage}">
         </ShellContent>
 
         <ShellContent 
             Title="Ustawienia"
-            Icon=""
+            Icon="../Icons/settings.svg"
             ContentTemplate="{DataTemplate views:SettingsPage}">
         </ShellContent>
 
