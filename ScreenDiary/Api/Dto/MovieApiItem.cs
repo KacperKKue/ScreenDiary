@@ -27,5 +27,9 @@ namespace ScreenDiary.Api.Dto
 
         [JsonPropertyName("vote_average")]
         public double VoteAverage { get; set; }
+
+        public string? FullPosterUrl => string.IsNullOrEmpty(PosterPath)
+            ? null
+            : $"https://image.tmdb.org/t/p/w500{PosterPath}";
     }
 }

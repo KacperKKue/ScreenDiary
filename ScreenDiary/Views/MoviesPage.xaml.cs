@@ -20,9 +20,7 @@ public partial class MoviesPage : ContentPage
 
     private async void AddMovie_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(
-            new Views.Movies.AddMoviePage()
-        );
+        await Navigation.PushAsync(new Views.Movies.MovieSearchPage());
     }
 
     private async void Movie_Selected(object sender, SelectionChangedEventArgs e)

@@ -2,33 +2,29 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScreenDiary.Views.Movies.MovieInfoPage"
+             xmlns:viewmodels="clr-namespace:ScreenDiary.ViewModels.Movies"
              Title="MovieInfoPage">
-    
+
     <ScrollView>
-        <VerticalStackLayout 
-            Padding="16" 
-            Spacing="12">
+        <VerticalStackLayout Padding="16" Spacing="12">
 
-            <Image 
-                Source="{Binding PosterUrl}"
-                HeightRequest="300"
-                Aspect="AspectFill"/>
+            <Image Source="{Binding Movie.FullPosterUrl}"
+                   HeightRequest="300"/>
 
-            <Label 
-                Text="{Binding Movie.Title}"
-                FontSize="22"
-                FontAttributes="Bold"/>
+            <Label Text="{Binding Movie.Title}"
+                   FontSize="22"
+                   FontAttributes="Bold"/>
 
-            <Label 
-                Text="{Binding Movie.Overview}" />
+            <Label Text="{Binding Movie.ReleaseDate}"
+                   FontSize="14"/>
 
-            <Label 
-                Text="{Binding Movie.VoteAverage,
-                StringFormat='Ocena: {0:F1}'}"/>
+            <Label Text="{Binding Movie.Overview}"
+                   FontSize="14"/>
 
-            <Button 
-                Text="Zapisz plakat do filmu"
-                Clicked="SavePoster_Clicked"/>
+            <Label Text="{Binding Movie.VoteAverage, StringFormat='Ocena TMDB: {0:F1}'}"/>
+
+            <Button Text="Dodaj do mojej listy"
+                    Clicked="Add_Clicked"/>
 
         </VerticalStackLayout>
     </ScrollView>

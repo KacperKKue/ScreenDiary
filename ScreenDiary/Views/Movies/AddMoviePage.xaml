@@ -50,8 +50,6 @@
                     AutoSize="TextChanges"
                     Text="{Binding Notes}" />
 
-                
-
             </VerticalStackLayout>
         </ScrollView>
 

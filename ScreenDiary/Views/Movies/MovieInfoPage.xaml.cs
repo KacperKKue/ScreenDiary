@@ -1,27 +1,35 @@
 using ScreenDiary.Api.Dto;
+using ScreenDiary.Data.Entities;
+using ScreenDiary.Helpers;
+using ScreenDiary.Services;
 using ScreenDiary.ViewModels.Movies;
 
 namespace ScreenDiary.Views.Movies;
 
 public partial class MovieInfoPage : ContentPage
 {
-    private MovieApiItem _movie;
+    private MovieInfoViewModel ViewModel => BindingContext as MovieInfoViewModel;
 
     public MovieInfoPage(MovieApiItem movie)
     {
         InitializeComponent();
-        _movie = movie;
         BindingContext = new MovieInfoViewModel(movie);
     }
 
-    private async void SavePoster_Clicked(object sender, EventArgs e)
+    private async void Add_Clicked(object sender, EventArgs e)
     {
-        // tutaj w kolejnym kroku:
-        // - zapis URL do MovieEntity
-        // albo
-        // - pobranie i zapis lokalny
+        var m = ViewModel.Movie;
 
-        await DisplayAlert("OK", "Plakat zapisany", "OK");
+        var entity = new MovieEntity
+        {
+            Title = m.Title,
+            ImageUrl = m.FullPosterUrl,
+            Notes = m.Overview,
+            Rating = (int)Math.Round(m.VoteAverage),
+            Status = WatchStatus.Planned
+        };
+
+        await DatabaseService.Database.SaveMovieAsync(entity);
         await Shell.Current.GoToAsync("..");
     }
 }

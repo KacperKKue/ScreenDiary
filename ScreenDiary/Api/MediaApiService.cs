@@ -1,6 +1,9 @@
 ﻿using ScreenDiary.Api.Dto;
 using System;
+using System.Buffers.Text;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 
@@ -8,18 +11,18 @@ namespace ScreenDiary.Api
 {
     internal class MediaApiService
     {
-        public async Task<List<MovieApiItem>> SearchMoviesAsync()
+        private const string ApiKey = "";
+        private const string BaseUrl = "https://api.themoviedb.org/3/search/movie";
+
+        public async Task<MovieSearchResponse?> SearchMoviesAsync(string query)
         {
-            using var stream = await FileSystem.OpenAppPackageFileAsync("movies_mock.json");
-            using var reader = new StreamReader(stream);
+            using var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", ApiKey);
 
-            var json = await reader.ReadToEndAsync();
+            var url = $"{BaseUrl}?query={query}";
 
-            var response = JsonSerializer.Deserialize<MovieSearchResponse>(json);
-            return response?.Results ?? new();
+            return await client.GetFromJsonAsync<MovieSearchResponse>(url);
         }
-
-        public string GetPosterUrl(string posterPath)
-            => $"https://image.tmdb.org/t/p/w185{posterPath}";
     }
 }

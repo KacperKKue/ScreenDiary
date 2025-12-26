@@ -30,7 +30,12 @@ namespace ScreenDiary.Data.Database
             => _database.InsertAsync(series);
 
         public Task<int> SaveMovieAsync(MovieEntity movie)
-            => _database.InsertAsync(movie);
+        {
+            if (movie.Id != 0)
+                return _database.UpdateAsync(movie);
+                
+            return _database.InsertAsync(movie);
+        }
 
 
         public Task<int> GetMoviesCountAsync()

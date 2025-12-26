@@ -4,34 +4,45 @@
              x:Class="ScreenDiary.Views.Movies.MovieSearchPage"
              xmlns:viewmodels="clr-namespace:ScreenDiary.ViewModels.Movies"
              Title="MovieSearchPage">
-    
+
     <ContentPage.BindingContext>
         <viewmodels:MovieSearchViewModel />
     </ContentPage.BindingContext>
 
-    <CollectionView 
-        ItemsSource="{Binding Results}"
-        SelectionMode="Single"
-        SelectionChanged="Movie_Selected">
+    <VerticalStackLayout Padding="16" Spacing="12">
 
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Frame 
-                    Padding="10" 
-                    Margin="6">
+        <Entry 
+            Placeholder="Wpisz tytuł filmu"
+            Text="{Binding Query}" />
 
-                    <VerticalStackLayout>
+        <Button 
+            Text="Szukaj"
+            Clicked="Search_Clicked"/>
 
-                        <Label Text="{Binding Title}"
-                               FontAttributes="Bold" />
+        <CollectionView ItemsSource="{Binding Results}"
+                SelectionMode="Single"
+                SelectionChanged="Movie_Selected">
 
-                        <Label 
-                            Text="{Binding ReleaseDate}" 
-                            FontSize="12"/>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Spacing="12" Padding="8">
 
-                    </VerticalStackLayout>
-                </Frame>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+                        <Image Source="{Binding FullPosterUrl}"
+                       WidthRequest="60"
+                       HeightRequest="90"/>
+
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Title}"
+                           FontAttributes="Bold"/>
+
+                            <Label Text="{Binding ReleaseDate}"
+                           FontSize="12"/>
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
 </ContentPage>

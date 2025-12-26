@@ -1,18 +1,21 @@
 using ScreenDiary.Api.Dto;
+using ScreenDiary.ViewModels.Movies;
 
 namespace ScreenDiary.Views.Movies;
 
 public partial class MovieSearchPage : ContentPage
 {
-	public MovieSearchPage()
-	{
-		InitializeComponent();
-	}
+    private MovieSearchViewModel ViewModel =>
+        BindingContext as MovieSearchViewModel;
 
-    protected override async void OnAppearing()
+    public MovieSearchPage()
     {
-        base.OnAppearing();
-        await (BindingContext as ViewModels.Movies.MovieSearchViewModel).LoadAsync();
+        InitializeComponent();
+    }
+
+    private async void Search_Clicked(object sender, EventArgs e)
+    {
+        await ViewModel.SearchAsync();
     }
 
     private async void Movie_Selected(object sender, SelectionChangedEventArgs e)
