@@ -17,5 +17,11 @@ namespace ScreenDiary.Services
             get => Preferences.Get("avatar_path", string.Empty);
             set => Preferences.Set("avatar_path", value);
         }
+
+        public bool displayPeopleGrades
+        {
+            get => Preferences.Get("display_vote_avarages", true);
+            set => Preferences.Set("display_vote_avarages", value);
+        }
     }
 }

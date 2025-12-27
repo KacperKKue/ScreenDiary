@@ -13,7 +13,7 @@ namespace ScreenDiary.ViewModels.Movies
         public string ImageUrl { get; set; } = string.Empty;
         public string Notes { get; set; } = string.Empty;
 
-        public int Rating { get; set; }
+        public int UserRating { get; set; }
         public bool IsFavorite { get; set; }
 
         public WatchStatus Status { get; set; } = WatchStatus.Planned;
@@ -27,7 +27,7 @@ namespace ScreenDiary.ViewModels.Movies
                 Title = Title,
                 ImageUrl = ImageUrl,
                 Notes = Notes,
-                Rating = Rating,
+                UserRating = UserRating,
                 IsFavorite = IsFavorite,
                 Status = Status
             };

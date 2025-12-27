@@ -5,12 +5,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ScreenDiary"
     xmlns:views="clr-namespace:ScreenDiary.Views"
+    BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#121212}"
     Title="ScreenDiary">
 
-    <TabBar>
 
+
+    <TabBar>
         <ShellContent 
             Title="Filmy"
+            Route="movies"
             Icon="../Icons/videocam.svg"
             ContentTemplate="{DataTemplate views:MoviesPage}">
         </ShellContent>

@@ -2,45 +2,86 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScreenDiary.Views.Movies.MovieDetailsPage"
-             Title="MovieDetailsPage">
+             Title="Szczegóły Filmu"
+             BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#121212}">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="True" />
+    </Shell.BackButtonBehavior>
 
     <ScrollView>
-        
-        <VerticalStackLayout 
-            Padding="16" 
-            Spacing="12">
+        <VerticalStackLayout Padding="20" Spacing="20">
 
-            <Label 
-                Text="{Binding Movie.Title}"
-                FontSize="22"
-                FontAttributes="Bold"/>
+            <VerticalStackLayout Spacing="4">
+                <Label 
+                    Text="{Binding Movie.Title}"
+                    FontSize="28"
+                    FontAttributes="Bold"
+                    TextColor="{AppThemeBinding Light=#212121, Dark=White}"/>
 
-            <Picker 
-                Title="Status oglądania"
-                ItemsSource="{Binding Statuses}"
-                SelectedItem="{Binding Movie.Status}" />
+                <Label 
+                    Text="{Binding Movie.ReleaseDate, StringFormat='Data wydania: {0:dd.MM.yyyy}'}"
+                    FontSize="14"
+                    TextColor="Gray"/>
+            </VerticalStackLayout>
 
-            <Label 
-                Text="Ocena (0–10)" />
-            
-            <Slider 
-                Minimum="0"
-                Maximum="10"
-                Value="{Binding Movie.Rating}" />
+            <Border StrokeShape="RoundRectangle 12" Padding="15" BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}">
+                <Label 
+                    Text="{Binding Movie.Description}"
+                    FontSize="16"
+                    LineHeight="1.2"/>
+            </Border>
 
-            <CheckBox 
-                IsChecked="{Binding Movie.IsFavorite}" />
-            
-            <Label 
-                Text="Ulubiony" />
+            <HorizontalStackLayout Spacing="20">
+                <VerticalStackLayout WidthRequest="200">
+                    <Label Text="Status" FontSize="12" FontAttributes="Bold" Margin="0,0,0,5" />
+                    <Picker 
+                        Title="Wybierz status"
+                        ItemsSource="{Binding Statuses}"
+                        SelectedItem="{Binding Movie.Status}"
+                        BackgroundColor="{AppThemeBinding Light=#E0E0E0, Dark=#2C2C2C}"/>
+                </VerticalStackLayout>
 
-            <Editor 
-                Placeholder="Notatki"
-                AutoSize="TextChanges"
-                Text="{Binding Movie.Notes}" />
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="End">
+                    <Label Text="Ulubiony" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <CheckBox IsChecked="{Binding Movie.IsFavorite}" Color="#E91E63" />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
 
-            <Button Text="Zapisz"
-                    Clicked="Save_Clicked" />
+            <Label Text="{Binding Movie.TMDBRating, StringFormat='Ocena TMDB: {0:F1}'}"/>
+
+            <VerticalStackLayout Spacing="5">
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Twoja ocena:" FontAttributes="Bold" />
+                    <Label Text="{Binding Movie.UserRating, StringFormat=' {0:F1}/10'}" TextColor="#FFC107" FontAttributes="Bold" />
+                </HorizontalStackLayout>
+                <Slider 
+                    Minimum="0"
+                    Maximum="10"
+                    Value="{Binding Movie.UserRating}"
+                    ThumbColor="#FFC107"
+                    MinimumTrackColor="#FFC107" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Moje notatki" FontAttributes="Bold" />
+                <Border StrokeShape="RoundRectangle 8" StrokeThickness="1">
+                    <Editor 
+                        Placeholder="Dodaj własne przemyślenia..."
+                        AutoSize="TextChanges"
+                        MinimumHeightRequest="100"
+                        Text="{Binding Movie.Notes}" />
+                </Border>
+            </VerticalStackLayout>
+
+            <Button Text="Zapisz zmiany"
+                    Clicked="Save_Clicked"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Margin="0,20,0,0" />
 
         </VerticalStackLayout>
     </ScrollView>

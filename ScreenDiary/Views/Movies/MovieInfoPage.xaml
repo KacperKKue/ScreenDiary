@@ -21,7 +21,7 @@
             <Label Text="{Binding Movie.Overview}"
                    FontSize="14"/>
 
-            <Label Text="{Binding Movie.VoteAverage, StringFormat='Ocena TMDB: {0:F1}'}"/>
+            <Label Text="{Binding Movie.TMDBRating, StringFormat='Ocena TMDB: {0:F1}'}"/>
 
             <Button Text="Dodaj do mojej listy"
                     Clicked="Add_Clicked"/>

@@ -16,6 +16,6 @@ public partial class MovieDetailsPage : ContentPage
     private async void Save_Clicked(object sender, EventArgs e)
     {
         await ViewModel.SaveAsync();
-        await Shell.Current.GoToAsync("..");
+        await Shell.Current.GoToAsync("//movies");
     }
 }

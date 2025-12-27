@@ -9,6 +9,10 @@
         <viewmodels:AddMovieViewModel />
     </ContentPage.BindingContext>
 
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="True" />
+    </Shell.BackButtonBehavior>
+
     <Grid 
         RowDefinitions="*,Auto"
         Padding="12">
@@ -37,7 +41,7 @@
                 <Slider
                     Minimum="0"
                     Maximum="10"
-                    Value="{Binding Rating}" />
+                    Value="{Binding UserRating}" />
 
                 <CheckBox 
                     IsChecked="{Binding IsFavorite}" />

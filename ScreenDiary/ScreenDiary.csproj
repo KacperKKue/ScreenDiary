@@ -57,6 +57,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Icons\arrow_back.svg" />
 	  <None Remove="Resources\Icons\person.svg" />
 	  <None Remove="Resources\Icons\settings.svg" />
 	  <None Remove="Resources\Icons\tv_next.svg" />
@@ -75,6 +76,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Include="Resources\Icons\arrow_back.svg" />
 	  <MauiImage Include="Resources\Icons\person.svg" />
 	  <MauiImage Include="Resources\Icons\settings.svg" />
 	  <MauiImage Include="Resources\Icons\tv_next.svg" />

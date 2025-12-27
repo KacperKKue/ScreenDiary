@@ -1,11 +1,6 @@
 ﻿using ScreenDiary.Api.Dto;
-using System;
-using System.Buffers.Text;
-using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
-using System.Text;
-using System.Text.Json;
 
 namespace ScreenDiary.Api
 {
@@ -20,9 +15,18 @@ namespace ScreenDiary.Api
             client.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", ApiKey);
 
-            var url = $"{BaseUrl}?query={query}";
+            try
+            {
+                var url = $"{BaseUrl}?query={query}";
 
-            return await client.GetFromJsonAsync<MovieSearchResponse>(url);
+                return await client.GetFromJsonAsync<MovieSearchResponse>(url);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occurred while searching for movies: {ex.Message}");
+
+                return null;
+            }
         }
     }
 }

@@ -22,14 +22,16 @@ public partial class MovieInfoPage : ContentPage
 
         var entity = new MovieEntity
         {
+            TMDBId = m.Id,
             Title = m.Title,
             ImageUrl = m.FullPosterUrl,
-            Notes = m.Overview,
-            Rating = (int)Math.Round(m.VoteAverage),
+            ReleaseDate = m.ReleaseDate,
+            Description = m.Overview,
+            TMDBRating = m.VoteAverage,
             Status = WatchStatus.Planned
         };
 
         await DatabaseService.Database.SaveMovieAsync(entity);
-        await Shell.Current.GoToAsync("..");
+        await Shell.Current.GoToAsync("//movies");
     }
 }

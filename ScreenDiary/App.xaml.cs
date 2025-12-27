@@ -10,6 +10,8 @@ namespace ScreenDiary
             InitializeComponent();
 
             MainPage = new AppShell();
+
+            //MainPage = new NavigationPage(new AppShell());
         }
     }
 }

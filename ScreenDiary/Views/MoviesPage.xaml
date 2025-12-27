@@ -3,66 +3,103 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScreenDiary.Views.MoviesPage"
              xmlns:viewmodels="clr-namespace:ScreenDiary.ViewModels"
-             Title="MoviesPage">
+             xmlns:converters="clr-namespace:ScreenDiary.Converters"
+             Title="Twoja Biblioteka">
 
     <ContentPage.BindingContext>
         <viewmodels:MoviesViewModel />
     </ContentPage.BindingContext>
 
-    <Grid 
-        RowDefinitions="*,Auto"
-        Padding="12">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:WatchStatusToColorConverter x:Key="StatusToColor" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-        <VerticalStackLayout 
-            Grid.Row="0"
-            Padding="16" 
-            Spacing="12">
+    <AbsoluteLayout>
 
-            <CollectionView 
-                ItemsSource="{Binding Movies}" 
-                SelectionMode="Single"
-                SelectionChanged="Movie_Selected">
+        <CollectionView 
+            ItemsSource="{Binding Movies}" 
+            SelectionMode="Single"
+            SelectionChanged="Movie_Selected"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
 
-                <CollectionView.ItemTemplate>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="2" />
+            </CollectionView.ItemsLayout>
 
-                    <DataTemplate>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="12,6">
+                        <Border 
+                            Padding="0" 
+                            StrokeShape="RoundRectangle 15"
+                            StrokeThickness="0"
+                            BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}">
+                            <Border.Shadow>
+                                <Shadow Brush="Black" Offset="0,2" Radius="8" Opacity="0.1" />
+                            </Border.Shadow>
 
-                        <Frame 
-                            Padding="8" 
-                            Margin="4" 
-                            CornerRadius="10" 
-                            HasShadow="True">
-
-                            <HorizontalStackLayout 
-                                Spacing="12">
-
+                            <Grid ColumnDefinitions="100, *" HeightRequest="140">
                                 <Image 
+                                    Grid.Column="0"
                                     Source="{Binding ImageUrl}" 
-                                    WidthRequest="50" 
-                                    HeightRequest="75" />
+                                    Aspect="AspectFill" />
 
-                                <VerticalStackLayout>
+                                <StackLayout Grid.Column="1" Padding="15" VerticalOptions="Center" Spacing="5">
                                     <Label 
                                         Text="{Binding Title}" 
                                         FontSize="18" 
-                                        FontAttributes="Bold"/>
+                                        FontAttributes="Bold"
+                                        LineBreakMode="TailTruncation"
+                                        TextColor="{AppThemeBinding Light=#212121, Dark=White}"/>
 
-                                    <Label 
-                                        Text="Rating: {Binding Rating}" 
-                                        FontSize="14"/>
+                                    <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
+                                        <Label Text="⭐" FontSize="14" VerticalOptions="Center"/>
+                                        <Label 
+                                            Text="{Binding UserRating, StringFormat='{0:F1}'}" 
+                                            FontSize="15"
+                                            FontAttributes="Bold"
+                                            TextColor="#FFC107"/>
+                                        <Label Text="/ 10" FontSize="12" TextColor="Gray" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
 
-                                </VerticalStackLayout>
-                            </HorizontalStackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </VerticalStackLayout>
+                                    <Border HorizontalOptions="Start" 
+                                        Padding="10,4" 
+                                        StrokeShape="RoundRectangle 12"
+                                        StrokeThickness="0"
+                                        BackgroundColor="{Binding Status, Converter={StaticResource StatusToColor}}">
+
+                                        <Label Text="{Binding Status}" 
+                                           FontSize="11" 
+                                           TextColor="White" 
+                                           FontAttributes="Bold"/>
+                                    </Border>
+                                </StackLayout>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
         <Button 
-            Grid.Row="1"
-            Text="Dodaj film" 
-            Clicked="AddMovie_Clicked" />
+            Text="+"
+            FontSize="24"
+            FontAttributes="Bold"
+            TextColor="White"
+            BackgroundColor="#512BD4"
+            HeightRequest="60"
+            WidthRequest="60"
+            CornerRadius="30"
+            Clicked="AddMovie_Clicked"
+            AbsoluteLayout.LayoutBounds="0.95, 0.95, AutoSize, AutoSize"
+            AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Button.Shadow>
+                <Shadow Brush="Black" Offset="0,4" Radius="10" Opacity="0.3" />
+            </Button.Shadow>
+        </Button>
 
-    </Grid>
+    </AbsoluteLayout>
 </ContentPage>

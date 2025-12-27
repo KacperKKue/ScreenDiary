@@ -32,6 +32,8 @@ namespace ScreenDiary.ViewModels.Movies
 
             foreach (var movie in response.Results)
             { 
+                Trace.WriteLine(
+                    $"Found movie: {movie.Title} ({movie.ReleaseDate})");
                 Results.Add(movie); 
             }
         }

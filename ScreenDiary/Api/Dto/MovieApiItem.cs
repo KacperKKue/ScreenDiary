@@ -26,7 +26,7 @@ namespace ScreenDiary.Api.Dto
         public string PosterPath { get; set; } = string.Empty;
 
         [JsonPropertyName("vote_average")]
-        public double VoteAverage { get; set; }
+        public float VoteAverage { get; set; }
 
         public string? FullPosterUrl => string.IsNullOrEmpty(PosterPath)
             ? null

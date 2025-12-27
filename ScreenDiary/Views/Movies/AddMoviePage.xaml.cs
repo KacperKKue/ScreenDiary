@@ -20,6 +20,6 @@ public partial class AddMoviePage : ContentPage
         }
 
         await ViewModel.SaveAsync();
-        await Shell.Current.GoToAsync("..");
+        await Shell.Current.GoToAsync("//movies");
     }
 }

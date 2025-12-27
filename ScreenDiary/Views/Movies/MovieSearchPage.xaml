@@ -9,6 +9,10 @@
         <viewmodels:MovieSearchViewModel />
     </ContentPage.BindingContext>
 
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="True" />
+    </Shell.BackButtonBehavior>
+
     <VerticalStackLayout Padding="16" Spacing="12">
 
         <Entry 
