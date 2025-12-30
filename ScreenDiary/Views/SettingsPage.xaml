@@ -3,22 +3,77 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScreenDiary.Views.SettingsPage"
              xmlns:viewmodels="clr-namespace:ScreenDiary.ViewModels"
-             Title="SettingsPage">
+             Title="Settings"
+             BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#121212}">
 
     <ContentPage.BindingContext>
         <viewmodels:SettingsViewModel />
     </ContentPage.BindingContext>
 
-    <VerticalStackLayout Padding="16" Spacing="20">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
 
-        <Label Text="Ustawienia aplikacji"
-               FontSize="20"
-               FontAttributes="Bold"/>
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Preferences" FontSize="12" TextColor="Gray" Margin="10,0" FontAttributes="Bold"/>
 
-        <Button Text="Usuń wszystkie dane"
-                BackgroundColor="Red"
-                TextColor="White"
-                Clicked="Reset_Clicked"/>
+                <Border StrokeShape="RoundRectangle 12" StrokeThickness="0" BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}">
+                    <VerticalStackLayout>
+                        <Grid ColumnDefinitions="*, 50" Padding="15">
+                            <Label Text="Display ratings from TMDB" VerticalOptions="Center" />
+                            <Switch Grid.Column="2" Toggled="OnShowRatingsToggled" HorizontalOptions="End" IsToggled="{Binding DisplayPeopleVotes, Mode=TwoWay}" OnColor="#512BD4"/>
+                        </Grid>
 
-    </VerticalStackLayout>
+                        <BoxView HeightRequest="1" Color="LightGray" Opacity="0.2" Margin="15,0"/>
+
+                        <Grid ColumnDefinitions="*, Auto" Padding="15">
+                            <Label Text="Language" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="English >" TextColor="Gray" VerticalOptions="Center" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="About" FontSize="12" TextColor="Gray" Margin="10,0" FontAttributes="Bold"/>
+
+                <Border StrokeShape="RoundRectangle 12" StrokeThickness="0" BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}">
+                    <VerticalStackLayout>
+                        <Grid ColumnDefinitions="*, Auto" Padding="15">
+                            <Label Text="Wersja" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="1.0.1 (Build 02)" TextColor="Gray" />
+                        </Grid>
+
+                        <BoxView HeightRequest="1" Color="LightGray" Opacity="0.2" Margin="15,0"/>
+
+                        <Grid ColumnDefinitions="*, Auto" Padding="15">
+                            <Label Text="Privacy Policy" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="➔" TextColor="Gray" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10" Margin="0,20,0,0">
+                <Label Text="STREFA NIEBEZPIECZEŃSTWA" FontSize="12" TextColor="#E74C3C" Margin="10,0" FontAttributes="Bold"/>
+
+                <Border StrokeShape="RoundRectangle 12" StrokeThickness="1" Stroke="#E74C3C" BackgroundColor="Transparent">
+                    <Button Text="Wyczyść wszystkie dane"
+                            BackgroundColor="Transparent"
+                            TextColor="#E74C3C"
+                            FontAttributes="Bold"
+                            HeightRequest="50"
+                            Padding="0"
+                            Margin="0"
+                            HorizontalOptions="Fill"
+                            Clicked="Reset_Clicked"/>
+                </Border>
+                <Label Text="Uwaga: Ta operacja jest nieodwracalna. Wszystkie Twoje filmy i notatki zostaną usunięte." 
+                       FontSize="11" 
+                       TextColor="Gray" 
+                       HorizontalTextAlignment="Center" 
+                       Margin="10,0"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

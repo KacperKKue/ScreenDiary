@@ -4,7 +4,7 @@
              x:Class="ScreenDiary.Views.MoviesPage"
              xmlns:viewmodels="clr-namespace:ScreenDiary.ViewModels"
              xmlns:converters="clr-namespace:ScreenDiary.Converters"
-             Title="Twoja Biblioteka">
+             Title="Your Library">
 
     <ContentPage.BindingContext>
         <viewmodels:MoviesViewModel />

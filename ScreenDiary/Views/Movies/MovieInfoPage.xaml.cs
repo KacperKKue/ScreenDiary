@@ -18,7 +18,8 @@ public partial class MovieInfoPage : ContentPage
 
     private async void Add_Clicked(object sender, EventArgs e)
     {
-        var m = ViewModel.Movie;
+        var vm = ViewModel;
+        var m = vm.Movie;
 
         var entity = new MovieEntity
         {
@@ -28,7 +29,9 @@ public partial class MovieInfoPage : ContentPage
             ReleaseDate = m.ReleaseDate,
             Description = m.Overview,
             TMDBRating = m.VoteAverage,
-            Status = WatchStatus.Planned
+            Status = vm.SelectedStatus,
+            UserRating = vm.UserRating,
+            Notes = vm.Note
         };
 
         await DatabaseService.Database.SaveMovieAsync(entity);

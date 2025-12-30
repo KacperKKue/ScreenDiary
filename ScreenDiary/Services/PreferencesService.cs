@@ -18,10 +18,10 @@ namespace ScreenDiary.Services
             set => Preferences.Set("avatar_path", value);
         }
 
-        public bool displayPeopleGrades
+        public bool DisplayPeopleVotes
         {
-            get => Preferences.Get("display_vote_avarages", true);
-            set => Preferences.Set("display_vote_avarages", value);
+            get => Preferences.Get("display_vote_votes", true);
+            set => Preferences.Set("display_vote_votes", value);
         }
     }
 }

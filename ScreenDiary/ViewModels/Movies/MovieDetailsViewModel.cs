@@ -9,6 +9,8 @@ namespace ScreenDiary.ViewModels.Movies
 {
     internal class MovieDetailsViewModel : BaseViewModel
     {
+        private readonly PreferencesService _prefs;
+
         private MovieEntity _movie;
 
         public MovieEntity Movie
@@ -23,8 +25,13 @@ namespace ScreenDiary.ViewModels.Movies
 
         public Array Statuses => Enum.GetValues(typeof(WatchStatus));
 
+        public bool ShowRatings { get; set; }
+
         public MovieDetailsViewModel(MovieEntity movie)
         {
+            _prefs = new PreferencesService();
+            ShowRatings = _prefs.DisplayPeopleVotes;
+
             Movie = movie;
         }
 

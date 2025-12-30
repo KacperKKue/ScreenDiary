@@ -8,30 +8,28 @@
     BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#121212}"
     Title="ScreenDiary">
 
-
-
     <TabBar>
         <ShellContent 
-            Title="Filmy"
+            Title="Movies"
             Route="movies"
             Icon="../Icons/videocam.svg"
             ContentTemplate="{DataTemplate views:MoviesPage}">
         </ShellContent>
 
-        <ShellContent 
+        <!--<ShellContent 
             Title="Seriale"
             Icon="../Icons/tv_next.png"
             ContentTemplate="{DataTemplate views:SeriesPage}" >
-        </ShellContent>
+        </ShellContent>-->
 
         <ShellContent 
-            Title="Profil"
+            Title="Profile"
             Icon="../Icons/person.svg"
             ContentTemplate="{DataTemplate views:ProfilePage}">
         </ShellContent>
 
         <ShellContent 
-            Title="Ustawienia"
+            Title="Settings"
             Icon="../Icons/settings.svg"
             ContentTemplate="{DataTemplate views:SettingsPage}">
         </ShellContent>
