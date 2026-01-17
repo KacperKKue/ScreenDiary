@@ -5,10 +5,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ScreenDiary"
     xmlns:views="clr-namespace:ScreenDiary.Views"
-    BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#121212}"
+    
+    Shell.TabBarBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"
+    Shell.TabBarTitleColor="{AppThemeBinding Light={StaticResource PrimaryDark}, Dark={StaticResource Gray100}}"
+    Shell.TabBarForegroundColor="{AppThemeBinding Light={StaticResource PrimaryDark}, Dark={StaticResource Gray100}}"
+    Shell.TabBarUnselectedColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}"
+    
     Title="ScreenDiary">
 
-    <TabBar>
+    <TabBar
+        >
         <ShellContent 
             Title="Movies"
             Route="movies"
@@ -25,6 +31,7 @@
         <ShellContent 
             Title="Profile"
             Icon="../Icons/person.svg"
+            
             ContentTemplate="{DataTemplate views:ProfilePage}">
         </ShellContent>
 

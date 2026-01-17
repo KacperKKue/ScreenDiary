@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScreenDiary.Views.Movies.MovieDetailsPage"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             Title="Szczegóły Filmu"
-             BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#121212}">
+             Title="Szczegóły Filmu">
 
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="True" />
@@ -40,12 +39,13 @@
                         Title="Wybierz status"
                         ItemsSource="{Binding Statuses}"
                         SelectedItem="{Binding Movie.Status}"
-                        BackgroundColor="{AppThemeBinding Light=#E0E0E0, Dark=#2C2C2C}"/>
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark=#2C2C2C}"
+                        />
                 </VerticalStackLayout>
 
                 <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="End">
                     <Label Text="Ulubiony" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                    <CheckBox IsChecked="{Binding Movie.IsFavorite}" Color="#E91E63"/>
+                    <CheckBox IsChecked="{Binding Movie.IsFavorite}" Color="{StaticResource Primary}"/>
                 </VerticalStackLayout>
             </HorizontalStackLayout>
 
@@ -53,7 +53,8 @@
             
             <toolkit:RatingView
 			    EmptyShapeColor="White"
-			    FillColor="Orange"
+			    FillColor="{StaticResource Secondary}"
+                ShapeBorderColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray500}}"
 			    FillOption ="Shape"
 			    IsReadOnly="False"
 			    ShapePadding="3,7,7,3"
@@ -62,7 +63,6 @@
 			    Rating="{Binding Movie.UserRating, Mode=TwoWay}"
                 
 			    Shape="Star"
-			    ShapeBorderColor="LightYellow"
 			    ShapeBorderThickness="1"
 			    Spacing="{OnPlatform Android=1, Default=3}"/>
 
@@ -81,7 +81,7 @@
                     Clicked="Save_Clicked"
                     CornerRadius="25"
                     HeightRequest="50"
-                    BackgroundColor="#512BD4"
+                    BackgroundColor="{StaticResource Primary}"
                     TextColor="White"
                     FontAttributes="Bold"
                     Margin="0,20,0,0" />

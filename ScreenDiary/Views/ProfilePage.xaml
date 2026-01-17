@@ -19,7 +19,7 @@
                             WidthRequest="130" 
                             StrokeShape="RoundRectangle 65" 
                             StrokeThickness="4"
-                            Stroke="#512BD4"
+                            Stroke="{StaticResource Primary}"
                             Padding="0">
                         <Image Source="{Binding AvatarPath, FallbackValue='../Images/default_user.png'}"
                                Aspect="AspectFill"
@@ -29,7 +29,7 @@
 
                     <Button ImageSource="edit_icon.png"
                             Clicked="ChangeAvatar_Clicked"
-                            BackgroundColor="#512BD4"
+                            BackgroundColor="{StaticResource Primary}"
                             HeightRequest="40"
                             WidthRequest="40"
                             CornerRadius="20"

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScreenDiary.Views.Movies.MovieSearchPage"
              xmlns:viewmodels="clr-namespace:ScreenDiary.ViewModels.Movies"
-             Title="Szukaj filmów"
+             Title="Search movie"
              BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#121212}">
 
     <ContentPage.BindingContext>
@@ -23,7 +23,7 @@
             <Grid ColumnDefinitions="*, Auto" Padding="16" ColumnSpacing="10">
                 <SearchBar 
                     Grid.Column="0"
-                    Placeholder="Wpisz tytuł filmu..."
+                    Placeholder="Enter movie title..."
                     Text="{Binding Query}"
                     SearchCommand="{Binding SearchCommand}" />
                 <Button 
@@ -32,8 +32,8 @@
                     FontAttributes="Bold"
                     CornerRadius="8"
                     HeightRequest="45"
-                    BackgroundColor="#512BD4"
-                    TextColor="White"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Primary}}"
+                    TextColor="{AppThemeBinding Light={StaticResource White}}"
                     Clicked="Search_Clicked"/>
             </Grid>
         </Border>
@@ -43,7 +43,7 @@
             ItemsSource="{Binding Results}"
             SelectionMode="Single"
             SelectionChanged="Movie_Selected"
-            EmptyView="Wpisz tytuł, aby rozpocząć wyszukiwanie">
+            EmptyView="Enter a title to start searching">
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>

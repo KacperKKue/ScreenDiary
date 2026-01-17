@@ -40,7 +40,6 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -66,6 +65,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Platforms\Android\Resources\values\styles.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\AppIcon\appicon.png" />
+	  <None Remove="Resources\AppIcon\appicon.svg" />
 	  <None Remove="Resources\Icons\arrow_back.svg" />
 	  <None Remove="Resources\Icons\person.svg" />
 	  <None Remove="Resources\Icons\settings.svg" />
@@ -85,6 +90,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiIcon Include="Resources\AppIcon\appicon.png" />
 	  <MauiImage Include="Resources\Icons\arrow_back.svg" />
 	  <MauiImage Include="Resources\Icons\person.svg" />
 	  <MauiImage Include="Resources\Icons\settings.svg" />

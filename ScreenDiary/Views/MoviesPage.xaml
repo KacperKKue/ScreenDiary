@@ -4,6 +4,8 @@
              x:Class="ScreenDiary.Views.MoviesPage"
              xmlns:viewmodels="clr-namespace:ScreenDiary.ViewModels"
              xmlns:converters="clr-namespace:ScreenDiary.Converters"
+             
+             Background="{AppThemeBinding Light={StaticResource White}}"
              Title="Your Library">
 
     <ContentPage.BindingContext>
@@ -89,7 +91,7 @@
             FontSize="24"
             FontAttributes="Bold"
             TextColor="White"
-            BackgroundColor="#512BD4"
+            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}}"
             HeightRequest="60"
             WidthRequest="60"
             CornerRadius="30"
